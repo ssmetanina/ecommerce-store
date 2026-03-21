@@ -1,0 +1,117 @@
+import { CategoryType } from "../types/category";
+import { ProductType } from "../types/product";
+
+export const categories: CategoryType[] = [
+  { id: "Electronics", name: "Electronics", img: "./images/electronics.png" },
+  { id: "Clothing", name: "Clothing", img: "./images/clothing.png" },
+  { id: "Books", name: "Books", img: "./images/books.png" },
+  { id: "Furniture", name: "Furniture", img: "./images/furniture.png" },
+  { id: "Outdoor", name: "Outdoor", img: "./images/outdoor.png" },
+];
+
+export const products: ProductType[] = [
+  {
+    id: 1,
+    categoryId: "Electronics",
+    name: "Laptop",
+    price: 1200,
+    img: "./images/laptop.png",
+  },
+  {
+    id: 2,
+    categoryId: "Electronics",
+    name: "Smartphone",
+    price: 800,
+    img: "./images/smartphone.png",
+  },
+  {
+    id: 3,
+    categoryId: "Electronics",
+    name: "Headphones",
+    price: 150,
+    img: "./images/headphones.png",
+  },
+  {
+    id: 4,
+    categoryId: "Electronics",
+    name: "Monitor",
+    price: 300,
+    img: "./images/monitor.png",
+  },
+  {
+    id: 5,
+    categoryId: "Clothing",
+    name: "T-Shirt",
+    price: 20,
+    img: "./images/t-shirt.png",
+  },
+  { id: 6, categoryId: "Clothing", name: "Jeans", price: 50, img: "./images/jeans.png" },
+  { id: 7, categoryId: "Clothing", name: "Jacket", price: 100, img: "./images/jacket.png" },
+  {
+    id: 8,
+    categoryId: "Clothing",
+    name: "Sneakers",
+    price: 70,
+    img: "./images/sneakers.png",
+  },
+  { id: 9, categoryId: "Books", name: "Novel", price: 15, img: "./images/novel.png" },
+  { id: 10, categoryId: "Books", name: "Textbook", price: 40, img: "./images/textbook.png" },
+  { id: 11, categoryId: "Books", name: "Magazine", price: 10, img: "./images/magazine.png" },
+  {
+    id: 12,
+    categoryId: "Books",
+    name: "Comic Book",
+    price: 12,
+    img: "./images/comicBook.png",
+  },
+  {
+    id: 13,
+    categoryId: "Furniture",
+    name: "Desk Chair",
+    price: 200,
+    img: "./images/deskСhair.png",
+  },
+  {
+    id: 14,
+    categoryId: "Furniture",
+    name: "Table",
+    price: 150,
+    img: "./images/table.png",
+  },
+  {
+    id: 15,
+    categoryId: "Furniture",
+    name: "Bookshelf",
+    price: 120,
+    img: "./images/bookshelf.png",
+  },
+  { id: 16, categoryId: "Furniture", name: "Lamp", price: 80, img: "./images/lamp.png" },
+  {
+    id: 17,
+    categoryId: "Outdoor",
+    name: "Bicycle",
+    price: 500,
+    img: "./images/bicycle.png",
+  },
+  {
+    id: 18,
+    categoryId: "Outdoor",
+    name: "Scooter",
+    price: 300,
+    img: "./images/scooter.png",
+  },
+  {
+    id: 19,
+    categoryId: "Outdoor",
+    name: "Roller Skates",
+    price: 150,
+    img: "./images/rollerSkates.png",
+  },
+  {
+    id: 20,
+    categoryId: "Outdoor",
+    name: "Skateboard",
+    price: 120,
+    img: "./images/skateboard.png",
+  },
+];

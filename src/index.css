@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import url("/fonts/satoshi/stylesheet.css");
+
+@font-face {
+     font-family: 'Integral CF';
+     src: url('/fonts/integral_cf/IntegralCF-Medium.woff2') format('woff2');
+     font-weight: 500;
+     font-style: normal;
+   }
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/satoshi/Satoshi-Regular.woff2") format("woff2"),
+       url("/fonts/satoshi/Satoshi-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+    --color-gray: rgba(240, 240, 240, 1);
+    --font-heading: 'Integral CF', sans-serif;
+    --font-body: 'Satoshi', sans-serif;
+}
