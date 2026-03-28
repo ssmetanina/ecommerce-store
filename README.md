@@ -1,8 +1,48 @@
-# React + Vite
+## Интернет магазин / E-commerce Frontend (dev)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Фронтенд интернет-магазина с клиентской маршрутизацией, адаптивным интерфейсом и проработкой пользовательских сценариев.
+Ветка dev используется для активной разработки и добавления новых фич.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## О проекте
+
+Проект создается как масштабируемый шаблон frontend-приложения для интернет-магазина с возможностью дальнейшей кастомизации под конкретный бренд и каталог.
+
+Ветка dev отражает текущий процесс разработки и может содержать нестабильные или незавершенные части.
+
+---
+
+## Стек технологий
+- React
+- TypeScript
+- React Router
+- Tailwind CSS
+- Vite
+
+---
+
+## Реализованная функциональность (dev)
+- клиентская маршрутизация
+- динамические роуты
+- отображение каталога товаров
+- переход между страницами категорий и товаров
+- базовая структура e-commerce интерфейса
+- адаптивный UI (mobile / desktop)
+- страница продукта с детальной информацией
+
+---
+
+## Статус проекта
+
+Проект находится в активной разработке.
+#### Ветка dev используется для:
+- разработки новых страниц и компонентов
+- тестирования UI
+- постепенного улучшения архитектуры
+
+#### Возможны:
+
+- незавершенные фичи
+- временные решения
+- изменения структуры
