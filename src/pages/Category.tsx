@@ -1,49 +1,56 @@
-import { Link, useLocation, useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { products } from "../data/data";
 
 function Category() {
   const { categoryId } = useParams();
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const location = useLocation();
-  console.log(location);
-
-  // const maxPrice = searchParams.get("maxPrice") ? Number(searchParams.get("maxPrice")) : Infinity;
-  const maxPrice = location.state?.maxPrice;
 
   const currentCategoryArray = products.filter(
-    (product) => product.categoryId === categoryId && product.price <= maxPrice
+    (product) => product.categoryId.toLowerCase() === categoryId?.toLowerCase()
   );
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const value = e.target.value;
-    setSearchParams(value ? { maxPrice: value } : {});
-  }
-
   return (
-    <div>
-      <h1>Category {categoryId}</h1>
-      <div>
-        <label htmlFor="maxPrice">Max Price </label>
-        <input
-          type="number"
-          id="maxPrice"
-          placeholder="Enter max price"
-          value={searchParams.get("maxPrice") || ""}
-          onChange={handleChange}
-        />
+    <section className="px-4 py-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <h1 className="font-heading text-3xl font-bold capitalize text-black md:text-4xl">
+            {categoryId}
+          </h1>
+
+          <p className="text-sm text-black/60 md:text-base">
+            Showing {currentCategoryArray.length} products
+          </p>
+        </div>
+
+        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+          {currentCategoryArray.map((product) => (
+            <li key={product.id}>
+              <Link
+                to={`/product/${product.id}`}
+                className="group block"
+              >
+                <div className="mb-4 flex items-center justify-center overflow-hidden p-4">
+                  <img
+                    src={product.img}
+                    alt={product.name}
+                    className="max-h-full max-w-full object-contain rounded-2xl"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <h2 className="line-clamp-2 text-base font-semibold text-black md:text-lg">
+                    {product.name}
+                  </h2>
+
+                  <p className="text-xl font-bold text-black">
+                    ${product.price}
+                  </p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul style={{ display: "flex" }}>
-        {currentCategoryArray.map((product) => (
-          <li key={product.name}>
-            <Link to={`/product/${product.id}`}>
-              {product.name} {product.price}$
-              <img src={product.img} alt={product.name} style={{ width: "150px" }} />
-            </Link>
-          </li>
-        ))}
-      </ul>{" "}
-    </div>
+    </section>
   );
 }
 

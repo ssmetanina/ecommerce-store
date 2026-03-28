@@ -48,7 +48,7 @@ function Home() {
       <ul className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-3 gap-1">
         {categories.map((category) => (
           <li key={category.id} className="bg-white rounded-3xl min-h-40 md:min-h-55 overflow-hidden px-6 py-6 flex items-start">
-            <Link to={`/category/${category.name}`}>
+            <Link to={`/category/${category.name.toLowerCase()}`}>
             <h2 className="font-heading text-xl font-bold text-center pb-2">{category.name}</h2>
             <img src={category.img} alt={category.name} />
             </Link>
