@@ -45,12 +45,12 @@ function Home() {
 
     <div className="font-body text-xl px-[6.944vw] py-[9vh] bg-white">
       <h1 className="font-heading font-bold text-3xl text-center pb-[6vh]">Categories</h1>
-      <ul className="grid grid-cols-5 gap-5">
+      <ul className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-3 gap-1">
         {categories.map((category) => (
-          <li key={category.id}>
+          <li key={category.id} className="bg-white rounded-3xl min-h-40 md:min-h-55 overflow-hidden px-6 py-6 flex items-start">
             <Link to={`/category/${category.name}`}>
-            <img src={category.img} alt={category.name} className="rounded-2xl" />
-            {category.name}
+            <h2 className="font-heading text-xl font-bold text-center pb-2">{category.name}</h2>
+            <img src={category.img} alt={category.name} />
             </Link>
           </li>
         ))}
