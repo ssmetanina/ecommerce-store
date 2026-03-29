@@ -25,7 +25,7 @@ function Header() {
       </NavLink>
       <div className="flex h-full items-center gap-x-[2.083vw]">
         <NavLink to={"/"} className="flex items-center h-full font-semibold tracking-widest">Home</NavLink>
-        <NavLink to={"/category"} className="flex items-center h-full font-semibold tracking-widest">Categories</NavLink>
+        <NavLink to={"/#categories"} className="flex items-center h-full font-semibold tracking-widest">Categories</NavLink>
         <NavLink to={"/products"} className="flex items-center h-full font-semibold tracking-widest">Products</NavLink>
         <NavLink to={"/about"} className="flex items-center h-full font-semibold tracking-widest">About</NavLink>
       </div>
