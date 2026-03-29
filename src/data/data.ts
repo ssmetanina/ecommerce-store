@@ -52,7 +52,7 @@ export const products: ProductType[] = [
     categoryId: "Clothing",
     name: "Sneakers",
     price: 70,
-    img: "./images/sneakers.png",
+    img: "/images/sneakers.png",
   },
   { id: 9, categoryId: "Books", name: "Novel", price: 15, img: "/images/novel.png" },
   { id: 10, categoryId: "Books", name: "Textbook", price: 40, img: "/images/textbook.png" },
