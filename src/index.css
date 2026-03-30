@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("/fonts/satoshi/stylesheet.css");
+@import "tailwindcss";
 
 @font-face {
      font-family: 'Integral CF';
