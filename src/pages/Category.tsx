@@ -5,7 +5,7 @@ import { Range } from "react-range";
 
 function Category() {
   const { categoryId } = useParams();
-  const [values, setValues] = useState([50, 200]);
+  const [values, setValues] = useState([10, 1000]);
 
   const currentCategoryArray = products.filter(
     (product) =>
@@ -30,9 +30,9 @@ function Category() {
               </div>
 
               <Range
-                step={10}
+                step={100}
                 min={0}
-                max={500}
+                max={1000}
                 values={values}
                 onChange={(vals) => setValues(vals)}
                 renderTrack={({ props, children }) => {
