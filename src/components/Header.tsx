@@ -21,11 +21,11 @@ function Header() {
     <nav className="hidden lg:block h-[8.6vh]">
     <div className="flex h-full items-center justify-between font-body gap-x-[2.083vw]">
       <NavLink to={"/"} className="flex h-full items-center">
-      <img src="./images/logo.svg" alt="logo" className="h-full max-h-10" />
+      <img src="/images/logo.svg" alt="logo" className="h-full max-h-10" />
       </NavLink>
       <div className="flex h-full items-center gap-x-[2.083vw]">
         <NavLink to={"/"} className="flex items-center h-full font-semibold tracking-widest">Home</NavLink>
-        <NavLink to={"/category"} className="flex items-center h-full font-semibold tracking-widest">Categories</NavLink>
+        <NavLink to={"/#categories"} className="flex items-center h-full font-semibold tracking-widest">Categories</NavLink>
         <NavLink to={"/products"} className="flex items-center h-full font-semibold tracking-widest">Products</NavLink>
         <NavLink to={"/about"} className="flex items-center h-full font-semibold tracking-widest">About</NavLink>
       </div>
@@ -40,15 +40,15 @@ function Header() {
             placeholder="Search for products..." 
             className="w-xl h-12 px-12 rounded-[3.875rem] text-[rgba(0, 0, 0, 0.4)] bg-gray " />
           </form>
-          <NavLink to={"/cart"} className="flex items-center h-full"><img src="./images/cart.svg" alt="cart image" /></NavLink>
+          <NavLink to={"/cart"} className="flex items-center h-full"><img src="/images/cart.svg" alt="cart image" /></NavLink>
       </div>
      </nav>
      <nav className="lg:hidden block">
       <div className="py-6 flex flex-row justify-between">
         <div className="flex gap-5 items-center">
-          <img src="./images/burger-menu.svg" alt="burger menu" className="h-auto" />
+          <img src="/images/burger-menu.svg" alt="burger menu" className="h-auto" />
           <NavLink to={"/"} className="flex h-full items-center">
-          <img src="./images/logo.svg" alt="logo" className="h-4.5" />
+          <img src="/images/logo.svg" alt="logo" className="h-4.5" />
           </NavLink>
         </div>
         <div className="flex gap-5">
