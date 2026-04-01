@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "old-home", element: <Navigate to={"/"} /> },
       { path: "about", element: <About /> },
-      { path: "cart", element: <Cart /> },
+      { path: "cart", element: <NotFound /> },
       { path: "thanks", element: <Thanks /> },
       { path: "category/:categoryId", element: <Category /> },
       { path: "products", element: <Products /> },
@@ -29,67 +29,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: (
-//       <>
-//         <Header />
-//         <Home />
-//         <Footer />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "about",
-//     element: (
-//       <>
-//         <Header />
-//         <About />
-//         <Footer />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "cart",
-//     element: (
-//       <>
-//         <Header /> <Cart />
-//         <Footer />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "categories",
-//     element: (
-//       <>
-//         <Header />
-//         <Categories />
-//         <Footer />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "product",
-//     element: (
-//       <>
-//         <Header />
-//         <ProductDetails />
-//         <Footer />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "*",
-//     element: (
-//       <>
-//         <Header />
-//         <NotFound />
-//         <Footer />
-//       </>
-//     ),
-//   },
-// ]);
 
 function App() {
   return <RouterProvider router={router} />;

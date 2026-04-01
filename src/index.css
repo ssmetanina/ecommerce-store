@@ -21,3 +21,11 @@
     --font-heading: 'Integral CF', sans-serif;
     --font-body: 'Satoshi', sans-serif;
 }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}

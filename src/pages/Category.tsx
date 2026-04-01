@@ -6,6 +6,7 @@ import { Range } from "react-range";
 function Category() {
   const { categoryId } = useParams();
   const [values, setValues] = useState([10, 1000]);
+  const [isPriceOpen, setPriceOpen] = useState(true); // true | false
 
   const currentCategoryArray = products.filter(
     (product) =>
@@ -14,8 +15,11 @@ function Category() {
       product.price <= values[1]
   );
 
+  const MIN_PRICE = 10
+  const MAX_PRICE = 1000
+
   return (
-    <div className="px-4 py-6 md:px-8 lg:px-12 xl:px-16">
+    <div className="px-4 py-6 md:px-8 lg:px-12 xl:px-10">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr] lg:items-start">
           <aside className="h-fit rounded-3xl border border-black/10 p-6">
@@ -24,15 +28,23 @@ function Category() {
             </div>
 
             <div className="border-t border-black/10 pt-6">
-              <div className="mb-6 flex items-center justify-between">
-                <h4 className="text-2xl font-semibold text-black">Price</h4>
-                <span className="text-2xl text-black">⌃</span>
-              </div>
-
-              <Range
-                step={100}
-                min={0}
-                max={1000}
+              <div className="mb-6 flex items-center justify-between cursor-pointer"
+              onClick={() => setPriceOpen(prev => !prev)}
+              >
+                <h4 className="text-xl font-semibold text-black">Price</h4>
+                   <span className={`material-symbols-outlined
+                    ${isPriceOpen ? 'rotate-0' : 'rotate-180'}
+                    transition-transform duration-150`}>
+                    expand_circle_down
+                    </span>
+                </div>
+                {
+                  isPriceOpen ?
+                  (<div>
+                    <Range
+                step={50}
+                min={MIN_PRICE}
+                max={MAX_PRICE}
                 values={values}
                 onChange={(vals) => setValues(vals)}
                 renderTrack={({ props, children }) => {
@@ -48,8 +60,8 @@ function Category() {
                         <div
                           className="absolute h-1.5 rounded-full bg-black"
                           style={{
-                            left: `${(values[0] / 500) * 100}%`,
-                            width: `${((values[1] - values[0]) / 500) * 100}%`,
+                            left: `${((values[0] - MIN_PRICE) / (MAX_PRICE - MIN_PRICE)) * 100}%`,
+                            width: `${((values[1] - values[0]) / (MAX_PRICE - MIN_PRICE)) * 100}%`,
                           }}
                         />
                       </div>
@@ -70,10 +82,19 @@ function Category() {
                 }}
               />
 
-              <div className="mt-3 flex items-center justify-between text-2xl font-medium text-black">
+              <div className="mt-3 flex items-center justify-between text-xl font-medium text-black">
                 <span>${values[0]}</span>
                 <span>${values[1]}</span>
               </div>
+                  </div>)
+                  : <div>
+                  </div>
+                    
+                }
+                
+            
+
+              
             </div>
           </aside>
 
@@ -90,13 +111,13 @@ function Category() {
 
             <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {currentCategoryArray.map((product) => (
-                <li key={product.id}>
+                <li key={product.id} className="rounded-3xl">
                   <Link to={`/product/${product.id}`} className="group block">
-                    <div className="mb-4 flex aspect-square items-center justify-center overflow-hidden rounded-3xl bg-[#F0EEED] p-4">
+                    <div className="mb-4 flex aspect-square items-center justify-center overflow-hidden p-4">
                       <img
                         src={product.img}
                         alt={product.name}
-                        className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                        className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 rounded-3xl"
                       />
                     </div>
 
@@ -110,6 +131,14 @@ function Category() {
                       </p>
                     </div>
                   </Link>
+
+                  <button
+                    type="button"
+                    disabled
+                    className="mt-4 w-fit rounded-full border border-black/10 bg-[#F0EEED] px-5 py-3 text-sm font-medium text-black/70 disabled:cursor-not-allowed"
+                  >
+                    Add to cart
+                  </button>
                 </li>
               ))}
             </ul>
