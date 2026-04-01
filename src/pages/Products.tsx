@@ -39,10 +39,13 @@ function Products() {
                 <img src={product.img} alt={product.name} className="max-w-40 md:max-w-70 lg:max-w-70 h-auto" />
                 <p>{product.name}</p>
                 <span>{product.price}$</span>
-                <button className="text-start px-5 py-1 
-                border rounded-full w-fit
-                hover:bg-gray-300 hover:text-white active:bg-gray-950
-                ">Add to cart</button>
+                <button
+                    type="button"
+                    disabled
+                    className="mt-4 w-fit rounded-full border border-black/10 bg-[#F0EEED] px-5 py-3 text-sm font-medium text-black/70 disabled:cursor-not-allowed"
+                  >
+                    Add to cart
+                  </button>
             </div>
         }) : <div>
             <h2 className="text-2xl">Nothing found :(</h2>

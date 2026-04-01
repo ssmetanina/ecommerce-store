@@ -6,6 +6,7 @@ import { Range } from "react-range";
 function Category() {
   const { categoryId } = useParams();
   const [values, setValues] = useState([10, 1000]);
+  const [isPriceOpen, setPriceOpen] = useState(true); // true | false
 
   const currentCategoryArray = products.filter(
     (product) =>
@@ -27,12 +28,20 @@ function Category() {
             </div>
 
             <div className="border-t border-black/10 pt-6">
-              <div className="mb-6 flex items-center justify-between">
+              <div className="mb-6 flex items-center justify-between cursor-pointer"
+              onClick={() => setPriceOpen(prev => !prev)}
+              >
                 <h4 className="text-xl font-semibold text-black">Price</h4>
-                <span className="text-xl text-black">⌃</span>
-              </div>
-
-              <Range
+                   <span className={`material-symbols-outlined
+                    ${isPriceOpen ? 'rotate-0' : 'rotate-180'}
+                    transition-transform duration-150`}>
+                    expand_circle_down
+                    </span>
+                </div>
+                {
+                  isPriceOpen ?
+                  (<div>
+                    <Range
                 step={50}
                 min={MIN_PRICE}
                 max={MAX_PRICE}
@@ -77,6 +86,15 @@ function Category() {
                 <span>${values[0]}</span>
                 <span>${values[1]}</span>
               </div>
+                  </div>)
+                  : <div>
+                  </div>
+                    
+                }
+                
+            
+
+              
             </div>
           </aside>
 
@@ -93,13 +111,13 @@ function Category() {
 
             <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {currentCategoryArray.map((product) => (
-                <li key={product.id}>
+                <li key={product.id} className="rounded-3xl">
                   <Link to={`/product/${product.id}`} className="group block">
-                    <div className="mb-4 flex aspect-square items-center justify-center overflow-hidden rounded-3xl bg-[#F0EEED] p-4">
+                    <div className="mb-4 flex aspect-square items-center justify-center overflow-hidden p-4">
                       <img
                         src={product.img}
                         alt={product.name}
-                        className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                        className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 rounded-3xl"
                       />
                     </div>
 
@@ -113,6 +131,14 @@ function Category() {
                       </p>
                     </div>
                   </Link>
+
+                  <button
+                    type="button"
+                    disabled
+                    className="mt-4 w-fit rounded-full border border-black/10 bg-[#F0EEED] px-5 py-3 text-sm font-medium text-black/70 disabled:cursor-not-allowed"
+                  >
+                    Add to cart
+                  </button>
                 </li>
               ))}
             </ul>
