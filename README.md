@@ -130,5 +130,5 @@ main — стабильная версия
 
 ## Деплой
 
-Деплой на Vercel
+Деплой на Vercel  
 https://ecommerce-store-neon-pi.vercel.app/
