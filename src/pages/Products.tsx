@@ -9,6 +9,7 @@ function Products() {
   const [values, setValues] = useState([10, 1000]);
   const [isPriceOpen, setPriceOpen] = useState(true);
   const [isCategoryOpen, setCategoryOpen] = useState(true);
+  const search = searchParams.get("search") ?? "";
 
   const MIN_PRICE = 10;
   const MAX_PRICE = 1000;
@@ -58,7 +59,7 @@ function Products() {
 
       return matchesSearch && matchesCategory && matchesPrice;
     });
-  }, [searchParams, selectedCategory, values]);
+  }, [search, selectedCategory, values]);
 
   return (
     <div className="px-4 py-6 md:px-8 lg:px-12 xl:px-10">
