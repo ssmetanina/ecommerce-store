@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
 import { categories } from "../data/data";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Home() {
   const location = useLocation();
